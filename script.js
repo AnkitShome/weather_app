@@ -1,5 +1,5 @@
 const apikey="033d61e69afa9ebc4881adf27e046b5f";
-      const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
       
 
       const searchBox=document.querySelector('.search input');
@@ -20,9 +20,11 @@ const apikey="033d61e69afa9ebc4881adf27e046b5f";
             console.log(data);
 
             document.querySelector(".city").innerHTML=data.name;
-            document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+"℃";
+            document.querySelector(".temp").innerHTML="Temperature: "+Math.round(data.main.temp)+"℃";
+            document.querySelector(".feels-like").innerHTML="Feels like: "+Math.round(data.main.feels_like)+"℃";
             document.querySelector(".humidity").innerHTML=data.main.humidity+"%";
             document.querySelector(".wind").innerHTML=data.wind.speed+" km/h";
+            
             
             if(data.weather[0].main=="Clouds"){
                weatherIcon.src="images/clouds.png";
